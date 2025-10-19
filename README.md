@@ -1,5 +1,10 @@
 # Angular Gemini Chat - Project Summary
 
+## Screenshot
+
+![Angular Gemini Chat Application](image.png)
+*Screenshot of the running application*
+
 ## ✅ Project Successfully Created!
 
 ### What's Been Set Up:
