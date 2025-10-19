@@ -1,0 +1,6 @@
+# Environment files with sensitive data
+src/environments/environment.ts
+src/environments/environment.prod.ts
+
+# Keep the template
+!src/environments/environment.example.ts

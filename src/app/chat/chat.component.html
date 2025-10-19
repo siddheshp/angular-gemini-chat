@@ -1,0 +1,37 @@
+<div class="chat-container">
+  <div class="chat-header">
+    <h1>Chat with Gemini AI</h1>
+    <button (click)="clearChat()" class="clear-btn">Clear Chat</button>
+  </div>
+
+  <div class="messages-container">
+    <div *ngFor="let message of messages" 
+         class="message" 
+         [class.user-message]="message.role === 'user'"
+         [class.assistant-message]="message.role === 'assistant'">
+      <div class="message-role">{{ message.role === 'user' ? 'You' : 'Gemini' }}</div>
+      <div class="message-content">{{ message.content }}</div>
+    </div>
+
+    <div *ngIf="isLoading" class="message assistant-message">
+      <div class="message-role">Gemini</div>
+      <div class="message-content typing">Typing...</div>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input 
+      type="text" 
+      [(ngModel)]="userInput" 
+      (keyup.enter)="sendMessage()"
+      placeholder="Type your message..."
+      [disabled]="isLoading"
+      class="message-input">
+    <button 
+      (click)="sendMessage()" 
+      [disabled]="isLoading || !userInput.trim()"
+      class="send-btn">
+      Send
+    </button>
+  </div>
+</div>
